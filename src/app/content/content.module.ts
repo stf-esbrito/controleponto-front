@@ -7,13 +7,17 @@ import { FormsModule } from "@angular/forms";
 import { CommonModule } from "@angular/common";
 import { SearchModule } from "../search/search.module";
 import { SearchComponent } from "../search/search.component";
+import { AddNewModule } from "../add-new/add-new.module";
+import { AddNewButtonModule } from "../add-new-button/add-new.module";
 
 @NgModule({
     imports: [
         HttpModule,
         FormsModule,
         CommonModule,
-        SearchModule
+        SearchModule,
+        AddNewModule,
+        AddNewButtonModule
     ],
     declarations:[
         ContentComponent,

@@ -1,26 +1,37 @@
-<search-component></search-component>
-<div class="row">
-  <div class="col-md-10 col-md-offset-1 col-sm-12">
-    <div class="table-responsive">  
-      <table class="table table-bordered table-striped table-hover ">
-        <thead>
-          <tr>
-            <th>#</th>
-            <th>Nome</th>
-            <th>Entrada</th>
-            <th>Saida</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor = "let ponto of pontos">
-            <td class="text-right">{{ponto.id}}</td>
-            <td>{{ponto.funcionario.nome}}</td>
-            <td>{{ponto.entrada}}</td>
-            <td>{{ponto.saida}}</td>
-          </tr>
-        </tbody>
-      </table>
+<div class="container-fluid">
+  <div class="row" style="padding-bottom: 5px;">
+    <div class="col-md-5 col-md-offset-1 col-xs-12">
+      <add-new-component></add-new-component>
+      <add-new-button></add-new-button>
+    </div>
+    <div class="col-md-4 col-md-offset-2 col-xs-12">
+      <div class="row">
+        <search-component></search-component>
+      </div>  
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1">
+      <div class="table-responsive">  
+        <table class="table table-bordered table-striped table-hover ">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Nome</th>
+              <th>Entrada</th>
+              <th>Saida</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor = "let ponto of pontos">
+              <td class="text-right">{{ponto.id}}</td>
+              <td>{{ponto.funcionario.nome}}</td>
+              <td>{{ponto.entrada}}</td>
+              <td>{{ponto.saida}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
   </div>
 </div>
-                                    

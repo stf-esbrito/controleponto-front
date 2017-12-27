@@ -10,12 +10,13 @@ import { HttpModule } from '@angular/http';
 import { FormsModule } from '@angular/forms';
 import { SearchModule } from './search/search.module';
 import { ContentModule } from './content/content.module';
+import { AddNewModule } from './add-new/add-new.module';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    MenuComponent
+    MenuComponent,
   ],
   imports: [
     HttpModule,
