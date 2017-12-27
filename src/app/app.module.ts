@@ -4,25 +4,27 @@ import { NgModule } from '@angular/core';
 import { AlertModule } from 'ngx-bootstrap';
 import { AppComponent } from './app.component';
 import { MenuComponent } from './menu/menu.component';
-import { ContentComponent } from './content/content.component';
 import { PontoService } from './service/ponto.service';
 import { FuncionarioService } from './service/funcionario.service';
 import { HttpModule } from '@angular/http';
 import { FormsModule } from '@angular/forms';
+import { SearchModule } from './search/search.module';
+import { ContentModule } from './content/content.module';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    MenuComponent,
-    ContentComponent
+    MenuComponent
   ],
   imports: [
     HttpModule,
     FormsModule,
-    BrowserModule
+    BrowserModule,
+    SearchModule,
+    ContentModule
   ],
-  providers: [PontoService, FuncionarioService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
