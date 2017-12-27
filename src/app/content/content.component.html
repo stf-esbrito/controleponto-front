@@ -1,0 +1,25 @@
+<div class="row">
+  <div class="col-md-10 col-md-offset-1 col-sm-12">
+    <div class="table-responsive">  
+      <table class="table table-bordered table-striped table-hover ">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Nome</th>
+            <th>Entrada</th>
+            <th>Saida</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor = "let ponto of pontos">
+            <td class="text-right">{{ponto.id}}</td>
+            <td>{{ponto.funcionario.nome}}</td>
+            <td>{{ponto.entrada}}</td>
+            <td>{{ponto.saida}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+                                    
