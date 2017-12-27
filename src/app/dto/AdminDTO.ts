@@ -1,3 +1,3 @@
 export class AdminDTO {
-    id : number
+    id : number = 1;
 }

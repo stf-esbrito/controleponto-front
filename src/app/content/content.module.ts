@@ -9,6 +9,7 @@ import { SearchModule } from "../search/search.module";
 import { SearchComponent } from "../search/search.component";
 import { AddNewModule } from "../add-new/add-new.module";
 import { AddNewButtonModule } from "../add-new-button/add-new.module";
+import { Broadcaster } from "../core/broadcaster";
 
 @NgModule({
     imports: [
@@ -24,7 +25,8 @@ import { AddNewButtonModule } from "../add-new-button/add-new.module";
     ],
     providers: [
         PontoService, 
-        FuncionarioService
+        FuncionarioService,
+        Broadcaster
     ],
     exports:[
         ContentComponent

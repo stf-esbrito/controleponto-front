@@ -11,19 +11,24 @@ import { FormsModule } from '@angular/forms';
 import { SearchModule } from './search/search.module';
 import { ContentModule } from './content/content.module';
 import { AddNewModule } from './add-new/add-new.module';
+import { ContentFuncionarioComponent } from './content-funcionario/content-funcionario.component';
+import { ContentFuncionarioModule } from './content-funcionario/content-funcionario.module';
+import { RouterModule } from '@angular/router';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    MenuComponent,
+    MenuComponent
   ],
   imports: [
     HttpModule,
     FormsModule,
     BrowserModule,
     SearchModule,
-    ContentModule
+    ContentModule,
+    ContentFuncionarioModule,
+    RouterModule
   ],
   providers: [],
   bootstrap: [AppComponent]

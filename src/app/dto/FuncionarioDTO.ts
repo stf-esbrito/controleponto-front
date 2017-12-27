@@ -4,5 +4,5 @@ export class FuncionarioDTO {
     id : number
     nome : string
     cpf : string
-    createdByAdmin : AdminDTO
+    createdByAdmin : AdminDTO = new AdminDTO();
 }
