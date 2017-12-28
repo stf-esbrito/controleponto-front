@@ -15,7 +15,8 @@ import { ContentFuncionarioComponent } from './content-funcionario/content-funci
 import { ContentFuncionarioModule } from './content-funcionario/content-funcionario.module';
 import { RouterModule } from '@angular/router';
 import { PageNotFoundModule } from './page-not-found/page-not-found.module';
-
+import { BaterPontoModule } from './bater-ponto/bater-ponto.module';
+import { DatePipe } from '@angular/common';
 
 
 @NgModule({
@@ -31,9 +32,12 @@ import { PageNotFoundModule } from './page-not-found/page-not-found.module';
     ContentModule,
     ContentFuncionarioModule,
     RouterModule,
-    PageNotFoundModule
+    PageNotFoundModule,
+    BaterPontoModule
   ],
-  providers: [],
+  providers: [
+    DatePipe
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

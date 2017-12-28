@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { PontoDTO } from '../dto/PontoDTO';
 import { PontoService } from '../service/ponto.service';
 import { Broadcaster } from '../core/broadcaster';
+import { Http } from '@angular/http/';
 declare var $: any;
 @Component({
   selector: 'app-content',
@@ -23,8 +24,8 @@ export class ContentComponent implements OnInit {
   }
 
   carregarPontos() : void {
-    this.pontoService.queryAll().subscribe(pontos => {
-      this.pontos = pontos;
+    this.pontoService.buscarPontosSemSaida().subscribe( response => {
+      this.pontos = response;
     });
   }
 

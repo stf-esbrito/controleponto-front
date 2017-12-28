@@ -11,14 +11,12 @@
         <table class="table table-bordered table-striped table-hover ">
           <thead>
             <tr>
-              <th>#</th>
               <th>Nome</th>
               <th>CPF</th>
             </tr>
           </thead>
           <tbody>
             <tr *ngFor = "let funcionario of funcionarios">
-              <td class="text-right">{{funcionario.id}}</td>
               <td>{{funcionario.nome}}</td>
               <td>{{funcionario.cpf}}</td>
             </tr>

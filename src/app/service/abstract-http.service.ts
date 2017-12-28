@@ -11,7 +11,7 @@ export abstract class AbstractHttpService<T> {
 
     constructor(
         protected resource: string, 
-        private http: Http) {
+        protected http: Http) {
     }
 
     public queryAll(queryParams?: any): Observable<T[]> {

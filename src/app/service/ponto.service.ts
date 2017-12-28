@@ -7,11 +7,22 @@ import { Observable } from 'rxjs/Observable';
 @Injectable()
 export class PontoService extends AbstractHttpService<PontoDTO> {
 
+  http : Http;
   constructor(http : Http) { 
-    super('ponto', http);
+    super('pontos', http);
+    this.http = http;
   }
 
   buscar(filter : any) : Observable<any> {
     return this.queryAll(filter);
   }
-}
+
+  buscarPontosSemSaida() : Observable<any> {
+    return this.http.get(`${this.apiUrl}${this.resource}/all`, this.getCustomOptions())
+    .map(response => response.json());
+  }
+  buscarFuncionariosOk() : Observable<any> {
+    return this.http.get(`${this.apiUrl}${this.resource}/allFuncOk`, this.getCustomOptions())
+    .map(response => response.json());
+  }
+ }

@@ -9,27 +9,24 @@
   </div>
   <div class="row">
     <div class="col-md-10 col-md-offset-1">
+      <h1>Pontos ativos</h1>
       <div class="table-responsive">  
         <table class="table table-bordered table-striped table-hover ">
           <thead>
             <tr>
-              <th>#</th>
               <th>Nome</th>
               <th>Entrada</th>
-              <th>Saida</th>
               <th>Ações</th>
             </tr>
           </thead>
           <tbody>
             <tr *ngFor = "let ponto of pontos">
-              <td class="text-right">{{ponto.id}}</td>
-              <td>{{ponto.funcionario.nome}}</td>
-              <td>{{ponto.entrada}}</td>
-              <td>{{ponto.saida}}</td>
-              <td>
-                <button class="btn btn-danger" (click)="deletar(ponto.id)"><i class="fa fa-trash"></i></button>
-                <button class="btn btn-warning" (click)="editar(ponto.id)" data-toggle="modal" data-target="#editPonto"><i class="fa fa-edit"></i></button>
-              </td>
+                <td>{{ponto.funcionario.nome}}</td>
+                <td>{{ponto.entrada}}</td>
+                <td>
+                  <button class="btn btn-danger" (click)="deletar(ponto.id)"><i class="fa fa-trash"></i></button>
+                  <button class="btn btn-warning" (click)="editar(ponto.id)" data-toggle="modal" data-target="#editPonto"><i class="fa fa-edit"></i></button>
+                </td>
             </tr>
           </tbody>
         </table>
