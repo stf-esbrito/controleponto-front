@@ -1,13 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { FuncionarioDTO } from '../dto/FuncionarioDTO';
 import { FuncionarioService } from '../service/funcionario.service';
-
+import { ViewChild } from '@angular/core/src/metadata/di';
+declare var $: any;
 @Component({
   selector: 'add-new-component',
   templateUrl: './add-new.component.html',
   styleUrls: ['./add-new.component.css']
 })
 export class AddNewComponent implements OnInit {
+
 
   funcionario : FuncionarioDTO = new FuncionarioDTO(); 
 
@@ -23,8 +25,12 @@ export class AddNewComponent implements OnInit {
       next: resp => {
       },
       error: error => {},
-      complete: () => {}
+      complete: () => {
+        $("#MyModal").modal('close');
+        location.reload();
+      }
     });
+    
   }
 
 }

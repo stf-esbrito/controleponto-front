@@ -8,7 +8,7 @@ import { Observable } from 'rxjs/Observable';
 export class PontoService extends AbstractHttpService<PontoDTO> {
 
   constructor(http : Http) { 
-    super('', http);
+    super('ponto', http);
   }
 
   buscar(filter : any) : Observable<any> {

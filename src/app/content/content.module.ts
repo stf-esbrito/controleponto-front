@@ -10,6 +10,7 @@ import { SearchComponent } from "../search/search.component";
 import { AddNewModule } from "../add-new/add-new.module";
 import { AddNewButtonModule } from "../add-new-button/add-new.module";
 import { Broadcaster } from "../core/broadcaster";
+import { EditPontoModule } from "../edit-ponto/edit-ponto.module";
 
 @NgModule({
     imports: [
@@ -18,7 +19,8 @@ import { Broadcaster } from "../core/broadcaster";
         CommonModule,
         SearchModule,
         AddNewModule,
-        AddNewButtonModule
+        AddNewButtonModule,
+        EditPontoModule
     ],
     declarations:[
         ContentComponent,

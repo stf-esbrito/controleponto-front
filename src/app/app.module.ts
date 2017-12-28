@@ -14,12 +14,14 @@ import { AddNewModule } from './add-new/add-new.module';
 import { ContentFuncionarioComponent } from './content-funcionario/content-funcionario.component';
 import { ContentFuncionarioModule } from './content-funcionario/content-funcionario.module';
 import { RouterModule } from '@angular/router';
+import { PageNotFoundModule } from './page-not-found/page-not-found.module';
+
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    MenuComponent
+    MenuComponent,
   ],
   imports: [
     HttpModule,
@@ -28,7 +30,8 @@ import { RouterModule } from '@angular/router';
     SearchModule,
     ContentModule,
     ContentFuncionarioModule,
-    RouterModule
+    RouterModule,
+    PageNotFoundModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,9 +1,17 @@
 <nav class="navbar navbar-default navbar-static-top">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand" href="#">
+      <a class="navbar-brand" [routerLink] = "['']">
         <img alt="Brand" src="">
       </a>
+      <ul class="nav navbar-nav">
+        <li>
+          <a [routerLink] = "['']">Pontos</a>
+        </li>
+        <li>
+          <a [routerLink] = "['funcionarios']">Funcionarios</a>
+        </li>
+      </ul>
     </div>
   </div>
 </nav>

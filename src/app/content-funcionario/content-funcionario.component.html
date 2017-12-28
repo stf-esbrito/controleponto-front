@@ -1,3 +1,30 @@
-<p>
-  content-funcionario works!
-</p>
+<div class="container-fluid">
+  <div class="row" style="padding-bottom: 5px;">
+    <div class="col-md-5 col-md-offset-1 col-xs-12">
+      <add-new-component></add-new-component>
+      <add-new-button></add-new-button>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1">
+      <div class="table-responsive">  
+        <table class="table table-bordered table-striped table-hover ">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Nome</th>
+              <th>CPF</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor = "let funcionario of funcionarios">
+              <td class="text-right">{{funcionario.id}}</td>
+              <td>{{funcionario.nome}}</td>
+              <td>{{funcionario.cpf}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

@@ -14,7 +14,7 @@ export class SearchComponent {
     filter: any;
     constructor(private pontoService: PontoService, private broadcaster: Broadcaster) {
         this.filter = {
-            id : ""
+            nome : ""
         };
      }
 
@@ -22,6 +22,7 @@ export class SearchComponent {
     }
 
     buscar() : void{
+        this.filter.nome = this.filter.nome.trim();
         this.pontoService.buscar(this.filter).subscribe(
             response => {
                 this.broadcaster.broadcast("pesquisa_ponto", response);

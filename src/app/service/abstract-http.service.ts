@@ -30,7 +30,7 @@ export abstract class AbstractHttpService<T> {
     }
 
     public put(requestBody: T): Observable<T> {
-        return this.http.put(`${this.apiUrl}${this.resource}/${requestBody['id']}`, requestBody, this.getCustomOptions())
+        return this.http.put(`${this.apiUrl}${this.resource}`, requestBody, this.getCustomOptions())
             .map(response => response.json());
     }
 

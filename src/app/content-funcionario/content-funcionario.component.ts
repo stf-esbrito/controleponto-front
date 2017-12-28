@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { FuncionarioService } from '../service/funcionario.service';
+import { FuncionarioDTO } from '../dto/FuncionarioDTO';
 
 @Component({
   selector: 'app-content-funcionario',
@@ -7,9 +9,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContentFuncionarioComponent implements OnInit {
 
-  constructor() { }
+  funcionarios : FuncionarioDTO[];
+
+  constructor(private funcionarioService : FuncionarioService) { }
 
   ngOnInit() {
+    this.carregarFuncionarios();
+  }
+
+  carregarFuncionarios(){
+      this.funcionarioService.queryAll().subscribe(response => {
+        this.funcionarios = response;
+      })
   }
 
 }

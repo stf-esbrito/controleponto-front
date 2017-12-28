@@ -4,5 +4,5 @@ export class PontoDTO{
     id : number
     entrada : Date
     saida : Date
-    funcionario : FuncionarioDTO
+    funcionario : FuncionarioDTO = new FuncionarioDTO();
 }
