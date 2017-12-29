@@ -17,8 +17,8 @@ export class PontoService extends AbstractHttpService<PontoDTO> {
     return this.queryAll(filter);
   }
 
-  buscarPontosSemSaida() : Observable<any> {
-    return this.http.get(`${this.apiUrl}${this.resource}/all`, this.getCustomOptions())
+  buscarPontosSemSaida(filter : any) : Observable<any> {
+    return this.http.get(`${this.apiUrl}${this.resource}/all?${super.buildQueryParams(filter)}`, this.getCustomOptions())
     .map(response => response.json());
   }
   buscarFuncionariosOk() : Observable<any> {

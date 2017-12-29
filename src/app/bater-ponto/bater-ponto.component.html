@@ -5,7 +5,7 @@
                 <select class="form-control small" [(ngModel)] = "ponto.funcionario.id">
                     <option *ngFor = "let funcionario of funcionarios" [value] = "funcionario.id" >{{funcionario.id}} - {{funcionario.nome}}</option>
                 </select>
-                <button class="btn btn-primary" style="margin-top: 5px" (click) = "baterPonto()">Bater Ponto</button>
+                <button class="btn btn-primary" style="margin-top: 5px" (click) = "baterPonto()" >Bater Ponto</button>
             </div>
         </div>
     </div>

@@ -23,7 +23,7 @@ export class SearchComponent {
 
     buscar() : void{
         this.filter.nome = this.filter.nome.trim();
-        this.pontoService.buscar(this.filter).subscribe(
+        this.pontoService.buscarPontosSemSaida(this.filter).subscribe(
             response => {
                 this.broadcaster.broadcast("pesquisa_ponto", response);
             }

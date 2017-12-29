@@ -5,6 +5,7 @@ import { PontoDTO } from "../dto/PontoDTO";
 import { PontoService } from "../service/ponto.service";
 import { Observable } from "rxjs/Observable";
 import { DatePipe } from "@angular/common";
+import { Router } from "@angular/router";
 
 
 @Component({
@@ -17,7 +18,7 @@ export class BaterPontoComponent implements OnInit {
     funcionarios : FuncionarioDTO[];
     ponto : PontoDTO = new PontoDTO;
 
-    constructor(private funcionarioService : FuncionarioService, private pontoService : PontoService){
+    constructor(private funcionarioService : FuncionarioService, private pontoService : PontoService, private router : Router){
         this.buscarFuncionarios();
     }
     ngOnInit(){
@@ -34,5 +35,6 @@ export class BaterPontoComponent implements OnInit {
     baterPonto() : void {
         this.ponto.entrada = new Date().getTime();
         this.pontoService.post(this.ponto).subscribe();
+        this.router.navigateByUrl('pontos');
     }
 }

@@ -39,7 +39,7 @@ export abstract class AbstractHttpService<T> {
             .map(response => response);
     }
 
-    private buildQueryParams(params: any): string {
+    protected buildQueryParams(params: any): string {
         let queryParams: string = '';
 
         for (let property in params) {

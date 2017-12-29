@@ -3,6 +3,7 @@ import { PontoDTO } from '../dto/PontoDTO';
 import { PontoService } from '../service/ponto.service';
 import { Broadcaster } from '../core/broadcaster';
 import { Http } from '@angular/http/';
+import { Router } from '@angular/router';
 declare var $: any;
 @Component({
   selector: 'app-content',
@@ -13,7 +14,8 @@ export class ContentComponent implements OnInit {
 
   pontos : PontoDTO[];
   ponto : PontoDTO;
-  constructor(private pontoService : PontoService, private broadcaster : Broadcaster) {
+  filter: any;
+  constructor(private pontoService : PontoService, private broadcaster : Broadcaster, private router: Router) {
     this.broadcaster.on<PontoDTO[]>("pesquisa_ponto").subscribe(response => {
        this.pontos = response;
     });
@@ -24,7 +26,7 @@ export class ContentComponent implements OnInit {
   }
 
   carregarPontos() : void {
-    this.pontoService.buscarPontosSemSaida().subscribe( response => {
+    this.pontoService.buscarPontosSemSaida(this.filter).subscribe( response => {
       this.pontos = response;
     });
   }
@@ -32,7 +34,7 @@ export class ContentComponent implements OnInit {
   deletar(id: number) : void {
     console.log(id);
     this.pontoService.delete(id).subscribe(response =>{ 
-        location.reload();
+        window.location.reload();
     });
   }
   editar(id : string) : void {
